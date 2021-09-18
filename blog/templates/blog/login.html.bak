@@ -19,39 +19,39 @@
     <style>
       .btn-primary,
       .btn-primary:hover {
-        background-color: #92c9f0;
+        background-color: #5f788a;
       }
       .btn-outline-primary {
-        color: #92c9f0;
+        color: #5f788a;
       }
       .text-primary {
-        color: #92c9f0;
+        color: #5f788a;
       }
       a {
 		text-decoration: none;
-		color: #92c9f0;
+    color: black;
 		font-weight: 500;
 	}
 
 	a:hover {
 		text-decoration: none;
-		color: #92c9f0;
+    color: black;
 		font-weight: 600;
 	}
     </style>
   </head>
   <body>
-    <div class="container-fluid bg-light">
+    <div class="container-fluid" style= "background: #5f788a">
       <div
         class="row justify-content-center align-items-center"
         style="height: 100vh"
       >
         <div class="text-center col-sm mx-auto mt-5 mb-2">
-          <h1 class="text-primary display-2 text-capitalize">
+          <h1 class=" display-2 text-capitalize" style = "color: white; font-weight: 600">
             scholarship portal
           </h1>
         </div>
-        <div class="card col m-4 mr-4">
+        <div class="card col m-4 mr-4 shadow-2-strong">
           <div class="card-body">
             <form class="p-5">
               <div class="form-group">
@@ -74,8 +74,8 @@
               <small class="text-right"><a href="#" class="row mb-3 p-2">The password entered is incorrect.</a></small>
               <p class="text-right"><a href="#" class="row mb-3 p-2">Forgot your password?</a></p>
               <div class="row">
-                <button type="submit" class="btn btn-primary col mx-2"><a href="#">Login</a></button>
-                <button class="btn btn-light col mx-2"><a href="{% url 'blog-register' %}">Register</a></button>
+                <a href = "#" type="submit" class="btn btn-primary col mx-2">Login</a>
+                <a href="{% url 'blog-register' %}" class="btn btn-light col mx-2">Register</a>
               </div>
             </form>
           </div>
