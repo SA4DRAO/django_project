@@ -1,3 +1,5 @@
+{%load static%}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -72,8 +74,8 @@
               <small class="text-right"><a href="#" class="row mb-3 p-2">The password entered is incorrect.</a></small>
               <p class="text-right"><a href="#" class="row mb-3 p-2">Forgot your password?</a></p>
               <div class="row">
-                <button type="submit" class="btn btn-primary col mx-2">Login</button>
-                <button type="submit" class="btn btn-light col mx-2">Register</button>
+                <button type="submit" class="btn btn-primary col mx-2"><a href="#">Login</a></button>
+                <button class="btn btn-light col mx-2"><a href="{% url 'blog-register' %}">Register</a></button>
               </div>
             </form>
           </div>

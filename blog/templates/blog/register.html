@@ -1,3 +1,5 @@
+{%load static%}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -38,8 +40,16 @@
       }
 
       .reg-card {
-        width: 75vw;
+        width: 50vw;
       }
+
+      @media only screen and (max-width: 768px) {
+        .reg-card
+        {
+          width: 90vw;
+        }
+      }
+
     </style>
   </head>
   <body>
@@ -48,10 +58,8 @@
     </div>
     <div class="container-fluid bg-light">
       <div
-        class="row justify-content-center align-items-center"
-        style="height: 100vh"
-      >
-        <div class="card col-md-4 w-50 m-5 reg-card">
+        class="row justify-content-center align-items-center">
+        <div class="card col-lg-4 col-sm-2 mx-auto mb-4 m-5 reg-card">
           <div class="card-body">
             <form class="p-5">
               <div class="form-group">
@@ -107,9 +115,9 @@
                 <button type="submit" class="btn btn-primary col mx-2">
                   Register
                 </button>
-                <button type="submit" class="btn btn-light col mx-2">
-                  Go to Login
-                </button>
+              </div>
+              <div class = "row">
+              <p class = "mt-1">Already a user?  <a class = "" href = "{% url 'blog-login'%}" style = "font-weight: 500"> Login here </a></p>
               </div>
             </form>
           </div>
