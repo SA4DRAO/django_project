@@ -5,11 +5,12 @@
     background-color: rgb(187, 185, 185);
     height: fit-content;
   }
+  .move {
+    margin-right: 0;
+    margin-left: 0;
+  }
   .display-6 {
     font-size: 1.5em;
-  }
-  .card-title {
-    text-decoration: underline;
   }
   .flex-class {
     display: flex;
@@ -38,7 +39,7 @@
   <div class="row m-0">
     <div class="card w-50 m-3 mx-auto">
       <div class="card-body">
-        <h1 class="strong text-center">Hi Divya!</h1>
+        <h1 class="strong text-center">Hi {{user.username}}!</h1>
         <p class="text-center display-6">
           Here are all the scholarships that are active right now!
         </p>
@@ -52,26 +53,28 @@
   <div class="card">
     <div class="card-body float-left">
       <div class="row align-items-center flex-class">
-        <section class="col-lg-8 p-4">
-          <h2 class="card-title">{{post.title}}</h2>
-          <small class="card-subtitle">Created by {{post.authors}}</small>
-          <p class="card-text">{{post.contents}}</p>
+        <section class="col-lg-8 px-4 py-2">
+          <h3 class="card-title" style="white-space: nowrap">{{post.title}}</h3>
+          <small class="card-subtitle"
+            ><i>Created by {{post.authors}}</i></small
+          >
+          <hr />
+          <p class="card-text mt-3">{{post.contents}}</p>
         </section>
-
-        <section class="col-lg-4">
-          <div class="row">
-            <div class="card text-right stat-card my-2 mr-3">
-              <div class="card-body">
-                <div class="card-title">Money</div>
-                <div class="card-text">{{post.scholarship_amount}}</div>
+        <section class="col-lg-4 mr-3">
+          <div class="row move">
+            <div class="bg-light text-end stat-card my-2">
+              <div class="p-2">
+                <h5>Money</h5>
+                <small>Rs. {{post.scholarship_amount}}</small>
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="card text-right stat-card my-2 mr-3">
-              <div class="card-body">
-                <div class="card-title">Deadline</div>
-                <div class="card-text">{{post.deadline}}</div>
+          <div class="row move">
+            <div class="bg-light text-end stat-card my-2">
+              <div class="p-2">
+                <h5>Deadline</h5>
+                <div>{{post.deadline}}</div>
               </div>
             </div>
           </div>
@@ -80,28 +83,22 @@
     </div>
 
     <div class="card-footer flex-class">
-    
-      <div class = "py-3">
-        Criteria:
-          {%if post.isBtech %}
-            <span class="py-3"> 
-            <span class="pill pill-green">B.Tech</span>
-            </span>
-          {%endif%}  
-
-          {%if post.isMtech%}
-            <span class="py-3"> 
-            <span class="pill pill-green">M.Tech</span>
-            </span>
-          {% endif %}
-          
-          {%if isPhD%}
-            <span class="py-3"> 
-            <span class="pill pill-green">PhD</span>
-            </span>
-          {%endif%}    
-
-    </div>
+      <div class="py-3">
+        <strong class="text-muted"> Criteria: </strong>
+        {%if post.isBtech %}
+        <span class="py-3">
+          <span class="pill pill-green">B.Tech</span>
+        </span>
+        {%endif%} {%if post.isMtech%}
+        <span class="py-3">
+          <span class="pill pill-green">M.Tech</span>
+        </span>
+        {% endif %} {%if isPhD%}
+        <span class="py-3">
+          <span class="pill pill-green">PhD</span>
+        </span>
+        {%endif%}
+      </div>
       <a href="{{post.url}}" class="btn btn-primary my-2 text-end">Apply now</a>
     </div>
   </div>

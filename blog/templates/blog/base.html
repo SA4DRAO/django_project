@@ -22,37 +22,51 @@
     {%else%}
     <title>Hello New User!</title>
     {%endif%}
+    <style>
+      .this {
+        margin-right: 0;
+      }
+    </style>
   </head>
 
   <body>
-    <header class="site-header">
-      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-        <div class="container">
-          <a class="navbar-brand strong mr-4" href="/">RISE</a>
-          <button
-            class="navbar-toggler"
+    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+      <a class="navbar-brand font-weight-bold" href="#">RISE</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarToggle"
+        aria-controls="navbarToggle"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarToggle">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home </a>
+          </li>
+          <!-- Navbar Right Side -->
+          <li class="nav-item">
+            <a class="nav-link" href="#">Track Scholarships</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+        <li class="nav-item my-2 my-2 my-sm-0">
+          <a
+            href="{% url 'logout' %}"
             type="button"
-            data-toggle="collapse"
-            data-target="#navbarToggle"
-            aria-controls="navbarToggle"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+            class="btn btn-light this px-4"
           >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarToggle">
-            <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="{% url 'blog-home'%}">Home</a>
-            </div>
-            <!-- Navbar Right Side -->
-            <div class="navbar-nav">
-              <a class="nav-item nav-link" href="#">Track Scholarships</a>
-              <a class="nav-item nav-link" href="#">About</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </header>
+            Logout
+          </a>
+        </li>
+      </div>
+    </nav>
 
     <main role="main" class="container-fluid">
       <div class="row">

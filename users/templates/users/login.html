@@ -1,4 +1,4 @@
-{%load static%} {% load crispy_forms_tags %}
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,9 +16,6 @@
 
     <title>Portal name</title>
     <style>
-      .container-fluid {
-        background-image: 'https://images.unsplash.com/photo-1528722828814-77b9b83aafb2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80';
-      }
       .btn-primary,
       .btn-primary:hover {
         background-color: #5f788a;
@@ -41,64 +38,68 @@
         font-weight: 600;
       }
 
-      .reg-card {
-        width: 50vw;
-      }
-
-      @media only screen and (max-width: 768px) {
-        .reg-card {
-          width: 90vw;
-        }
-      }
       body {
-        background-image: url('https://previews.123rf.com/images/eigens/eigens1907/eigens190701185/127450418-brush-painting-with-tea-green-light-sea-green-and-medium-aqua-marine-background-color-.jpg');
-        object-fit: cover;
-        border-image-repeat: none;
-      "
+        background-image: url('https://media.istockphoto.com/photos/colorful-blue-texture-background-picture-id653888188?k=20&m=653888188&s=612x612&w=0&h=rqym_r1I8YqigiR5SuAE1O2-Zq2hayf2_Na18Om0xYU=');
+        object-fit: fill;
       }
     </style>
   </head>
   <body>
     <!-- Background image -->
-      <div class="row text-center col-sm mx-auto mt-2">
-        <h1 class="text-primary display-5 text-capitalize mt-0">
-          scholarship portal
-        </h1>
-      </div>
+    <div class="bg-image" style="">
       <div class="container-fluid">
-        <div class="row justify-content-center align-items-center">
-          <div class="card col-lg-4 col-sm-2 mx-auto mb-4 m-5 reg-card">
-            <h3 class="card-title text-center display-6 pt-4">
-             Register an Account
+        <div
+          class="row justify-content-center align-items-center"
+          style="height: 100vh"
+        >
+          <div class="text-center col-sm mx-auto mt-2 mb-0">
+            <h1
+              class="display-1 text-capitalize mb-0"
+              style="
+                color: white;
+                font-weight: 600;
+                font-size: 7.2em;
+                margin-bottom: -10px;
+              "
+            >
+              RISE
+            </h1>
+            <h3
+              class="display-5 text-capitalize pt-0 mt-0"
+              style="color: white; font-weight: 300; font-size: 2.5em"
+            >
+              Achieve More.
             </h3>
+          </div>
+          <div class="card col m-4 shadow-2-strong">
             <div class="card-body">
-              <form method="POST" class="px-4 py-2">
+              <h3 class="card-title text-center display-6 pt-2">
+                Login To Your Account
+              </h3>
+              <form method="POST" class="p-3 px-5">
                 {% csrf_token %} {{ form|crispy}}
                 <div class="row">
-                  <button type="submit" class="btn btn-primary col mx-2">
-                    Register
+                  <button type="submit" class="btn btn-primary col mx-2 my-3">
+                    Login
                   </button>
                 </div>
-                <div class="row">
-                  <p class="mt-1">
-                    Already a user?
-                    <a
-                      class=""
-                      href="{%url 'login' %}"
-                      style="font-weight: 500"
-                    >
-                      Login here
-                    </a>
-                  </p>
-                </div>
+
+                <p class="mt-0">
+                  Need an account?
+                  <a
+                    class=""
+                    href="{% url 'register' %}"
+                    style="font-weight: 500"
+                  >
+                    Register here
+                  </a>
+                </p>
               </form>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Background image -->
-
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

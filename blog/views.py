@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Post
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 posts=[
     {
@@ -18,10 +19,10 @@ posts=[
 
 ]
 
-
+#@login_required
 def home(request):
     context = {
-        'posts':Post.objects.all(),
+        'posts':Post.objects.all(), 
     }
     return render(request,'blog/home.html',context)
 
@@ -34,8 +35,6 @@ def about(request):
 
 def login(request):
     context = {
-
-
     }
     return render(request,'blog/login.html',context)
 
@@ -44,6 +43,7 @@ def register(request):
     }
     return render(request,'blog/register.html',context)
 
+#@login_required
 def track(request):
     context = {
         'posts':Post.objects.all(),
