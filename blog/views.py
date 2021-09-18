@@ -44,3 +44,9 @@ def register(request):
 
     }
     return render(request,'blog/register.html',context)
+
+def track(request):
+    context = {
+        'posts':Post.objects.all(),
+    }
+    return render(request,'blog/track.html',context)

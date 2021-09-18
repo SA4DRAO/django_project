@@ -1,0 +1,90 @@
+{%extends "blog/base.html"%} {%block content%}
+
+<style>
+  .down-con {
+    background-color: rgb(187, 185, 185);
+    height: fit-content;
+  }
+
+  .display-6 {
+    font-size: 1.5em;
+  }
+
+  .heading {
+    background-color: aliceblue;
+    padding: 20px;
+  }
+
+  .pill {
+    border-radius: 15px;
+    padding: 5px 10px;
+    margin: 0 10px;
+    font-size: 0.75em;
+    font-weight: 600;
+    color: white;
+  }
+
+  .pill-green {
+    background-color: green;
+  }
+
+  .pill-gray {
+    background-color: gray;
+  }
+
+  .title {
+  }
+</style>
+
+<div class="title mt-1 mb-4 text-center">
+  <h2>Scholarship Tracker</h2>
+</div>
+
+<!-- <div class="col-lg-4 col-sm-10 w-75 mx-auto mt-4">
+  <div class="card container-fluid">
+    <div class="row card-body">
+      <h5 class="col-lg-4">ABC Scholarship</h5>
+      <div class="col-lg-3">Application Stage: Completed</div>
+      <div class="col-lg-3">Status: Pending</div>
+      <div class="col-lg-2">
+        <a class="btn btn-primary btn-sm">Expand more</a>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="accordion accordion-flush container" id="accordionFlushExample">
+  {% for post in posts %}
+  <div class="accordion-item row">
+    <h2 class="accordion-header" id="flush-heading">
+      <button
+        class="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#flush-collapseOne"
+        aria-expanded="false"
+        aria-controls="flush-collapseOne"
+      >
+        <h5 class="col-lg-4"></h5>
+      </button>
+    </h2>
+    <div
+      id="flush-collapseOne"
+      class="accordion-collapse collapse show"
+      aria-labelledby="flush-headingOne"
+      data-bs-parent="#accordionFlushExample"
+    >
+      <div class="accordion-body row text-center">
+        <div class="col-lg-4">
+          <span class="bold-text">Application Stage:</span>
+          <span class="pill pill-green">Completed</span>
+        </div>
+        <div class="col-lg-4">
+          Status: <span class="pill pill-gray">Pending</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  {%endfor%}
+</div>
+{%endblock content%}
