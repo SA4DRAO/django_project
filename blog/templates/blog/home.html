@@ -1,14 +1,16 @@
 {%extends "blog/base.html"%}
+
 {%block content%}
     {% for post in posts %}
-        <h1>
-            {{post.title}}
-        </h1>
-        <h2>
-            {{post.author}}
-        </h2>
-        <p>
-            {{post.content}}
-        </p>
+    <div class="col-lg-4 col-sm-10 w-75 mx-auto mt-4">
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">{{post.title}}</h2>
+            <small>{{post.authors}}</small>
+            <p class="card-text">{{post.contents}}</p>
+            <a href="{{post.url}}" class="btn btn-primary">Apply now</a>
+        </div>
+    </div>
+    </div>
     {%endfor%}
 {%endblock content%}

@@ -27,6 +27,20 @@ def home(request):
 def about(request):
     context = {
         'posts': Post.objects.all(),
-        'title': 'Kohn Jina',   
+        'title': 'John Xina',   
     }
     return render(request,'blog/about.html',context)
+
+def login(request):
+    context = {
+
+
+    }
+    return render(request,'blog/login.html',context)
+
+def register(request):
+    context = {
+
+
+    }
+    return render(request,'blog/register.html',context)

@@ -8,4 +8,5 @@ class Post(models.Model):
     contents = models.TextField()
     date = models.DateTimeField(default=timezone.now)
     authors = models.ForeignKey(User,on_delete=models.CASCADE)
+    url = models.URLField(max_length=200)
 
