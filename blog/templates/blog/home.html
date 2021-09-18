@@ -5,14 +5,12 @@
     background-color: rgb(187, 185, 185);
     height: fit-content;
   }
-
   .display-6 {
     font-size: 1.5em;
   }
   .card-title {
     text-decoration: underline;
   }
-
   .flex-class {
     display: flex;
     justify-content: space-between;
@@ -20,20 +18,17 @@
   .stat-card {
     margin-right: 10px !important;
   }
-
   .pill {
     border-radius: 15px;
     padding: 5px 10px;
-    margin: 0 10px;
+    margin: 0 2.5px;
     font-size: 0.75em;
     font-weight: 600;
     color: white;
   }
-
   .pill-green {
     background-color: green;
   }
-
   .pill-gray {
     background-color: gray;
   }
@@ -68,16 +63,15 @@
             <div class="card text-right stat-card my-2 mr-3">
               <div class="card-body">
                 <div class="card-title">Money</div>
-                <div class="card-text">$$$</div>
+                <div class="card-text">{{post.scholarship_amount}}</div>
               </div>
             </div>
           </div>
-
           <div class="row">
             <div class="card text-right stat-card my-2 mr-3">
               <div class="card-body">
                 <div class="card-title">Deadline</div>
-                <div class="card-text">Date</div>
+                <div class="card-text">{{post.deadline}}</div>
               </div>
             </div>
           </div>
@@ -86,10 +80,28 @@
     </div>
 
     <div class="card-footer flex-class">
-      <span class="py-3"
-        >Criteria: <span class="pill pill-green">B.Tech</span>
-      </span>
+    
+      <div class = "py-3">
+        Criteria:
+          {%if post.isBtech %}
+            <span class="py-3"> 
+            <span class="pill pill-green">B.Tech</span>
+            </span>
+          {%endif%}  
 
+          {%if post.isMtech%}
+            <span class="py-3"> 
+            <span class="pill pill-green">M.Tech</span>
+            </span>
+          {% endif %}
+          
+          {%if isPhD%}
+            <span class="py-3"> 
+            <span class="pill pill-green">PhD</span>
+            </span>
+          {%endif%}    
+
+    </div>
       <a href="{{post.url}}" class="btn btn-primary my-2 text-end">Apply now</a>
     </div>
   </div>

@@ -8,6 +8,7 @@ posts=[
         'content' : 'This is a test',
         'date' : '69th Nov 420'
     },
+    
     {
         'author': 'Test123',
         'title': 'Post123',
@@ -40,8 +41,6 @@ def login(request):
 
 def register(request):
     context = {
-
-
     }
     return render(request,'blog/register.html',context)
 
