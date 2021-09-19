@@ -52,7 +52,7 @@
 <div class="col-lg-6 col-sm-10 mx-auto my-2">
   <div class="card">
     <div class="card-body float-left">
-      <div class="row align-items-center flex-class">
+      <div class="row flex-class">
         <section class="col-lg-8 px-4 py-2">
           <h3 class="card-title" style="white-space: nowrap">{{post.title}}</h3>
           <small class="card-subtitle"
@@ -74,9 +74,12 @@
             <div class="bg-light text-end stat-card my-2">
               <div class="p-2">
                 <h5>Deadline</h5>
-                <div>{{post.deadline}}</div>
+                <small>{{post.deadline}}</small>
               </div>
             </div>
+          </div>
+          <div class="bg-light text-end px-3 py-2">
+            <i>Internal application</i>
           </div>
         </section>
       </div>

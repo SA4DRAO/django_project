@@ -49,3 +49,8 @@ def track(request):
         'posts':Post.objects.all(),
     }
     return render(request,'blog/track.html',context)
+
+def internalapp(request):
+    context = {
+    }
+    return render(request,'blog/internalapp.html',context)

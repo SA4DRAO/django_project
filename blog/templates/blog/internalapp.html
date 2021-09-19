@@ -12,21 +12,111 @@
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
       crossorigin="anonymous"
     />
+    <style>
+        .btn-primary,
+        .btn-primary:hover {
+          background-color: #5f788a;
+        }
+        .btn{
+            width:50%;
+        }
+        .btn-outline-primary {
+          color: #5f788a;
+        }
+        .text-primary {
+          color: #5f788a;
+        }
+        a {
+          text-decoration: none;
+          color: #5f788a;
+          font-weight: 500;
+        }
+  
+        a:hover {
+          text-decoration: none;
+          color: #5f788a;
+          font-weight: 600;
+        }
+        .reg-card {
+        width: 50vw;
+      }
+
+      @media only screen and (max-width: 768px) {
+        .reg-card {
+          width: 90vw;
+        }
+      }
+      </style>
   </head>
   <body>
-    
-      <!-- Optional JavaScript; choose one of the two! -->
+    <div class="row text-center col-sm mx-auto mt-4">
+        <h1 class="text-primary display-2 text-capitalize">application</h1>
+      </div>
+      <div class="container-fluid bg-light">
+        <div class="row justify-content-center align-items-center">
+        <div class="card col-lg-4 col-sm-2 mx-auto mb-4 m-5 reg-card">
+          
+            <div class="card-body">
+              <form method = "POST" class="p-5">
+                <div class="form-group">
+                    <label class="form-label h6" for="customFile">Title (specified by admin)</label><br>
+                    <small>instructions</small>
+                    <input type="file" class="form-control" id="customFile" required />
+                </div>
+                <div class="form-group pt-2">
+                    <label for="formFileMultiple" class="form-label h6">Multiple files input example</label><br>
+                    <small>instructions</small>
+                    <input class="form-control" type="file" id="formFileMultiple" multiple required />
+                </div>
+                <div class="form-group pt-2">
+                  <label for="email" class="h6">Alternate Email</label>
+                  <input type="email" class="form-control" placeholder="Alternate Email Address" required />
+                </div>
+                <div class="form-group pt-2">
+                    <label for="birthday">Submission Date</label>
+                    <input type="date" class="form-control">
+                  </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1" required />
+                    <label class="form-check-label" for="exampleCheck1"
+                      >I declare that these details are accurate.</label
+                    >
+                  </div>
+                <div class="row pt-4">
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary col mx-2">
+                            Back
+                          </button>
+                    </div>
+                    <div class="col text-end">
+                    <a href="tracker.html"><button id="done" type="submit" class="btn btn-primary col mx-2" onclick="run()">Submit</button></a>
+                </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
-    crossorigin="anonymous"
-  ></script>
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
 
-  <!-- Option 2: Separate Popper and Bootstrap JS -->
-  <!--
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-  -->
-  </body>
+  --></body>
+  <script>
+  function run(){
+    let done = document.getElementById("done")
+    alert("Congratulations! You have submitted your application successfully.")
+}
+</script>
+</html>
