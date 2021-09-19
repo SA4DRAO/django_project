@@ -79,7 +79,11 @@
             </div>
           </div>
           <div class="bg-light text-end px-3 py-2">
+            {%if isExternal %}
+            <i>External application</i>
+            {%else%}
             <i>Internal application</i>
+            {%endif%}
           </div>
         </section>
       </div>
@@ -102,7 +106,17 @@
         </span>
         {%endif%}
       </div>
-      <a href="{{post.url}}" class="btn btn-primary my-2 text-end">Apply now</a>
+      <a
+        href="
+      {%if isExternal %}
+      {{post.url}}
+      {%else%}
+      {% url 'internal-app' %}
+      {%endif%}
+      "
+        class="btn btn-primary my-2 text-end"
+        >Apply now</a
+      >
     </div>
   </div>
 </div>

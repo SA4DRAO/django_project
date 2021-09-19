@@ -19,7 +19,7 @@ posts=[
 
 ]
 
-#@login_required
+@login_required
 def home(request):
     context = {
         'posts':Post.objects.all(), 
@@ -43,13 +43,14 @@ def register(request):
     }
     return render(request,'blog/register.html',context)
 
-#@login_required
+@login_required
 def track(request):
     context = {
         'posts':Post.objects.all(),
     }
     return render(request,'blog/track.html',context)
 
+@login_required
 def internalapp(request):
     context = {
     }

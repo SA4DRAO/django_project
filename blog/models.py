@@ -17,10 +17,13 @@ class Post(models.Model):
     isBtech = models.BooleanField()
     isPhD = models.BooleanField()
 
+    def __str__(self):
+        return self.title
+
 
 class Application(models.Model):
     applicant = models.ForeignKey(User, on_delete=models.CASCADE)
-    title = models.ForeignKey(Post, on_delete=models.CASCADE)
+    title = models.CharField(max_length=100)
     contents = models.TextField('test', default = 'NA')
     date = models.DateTimeField(default=timezone.now)
     url = models.URLField(max_length=200, default = 'NA')

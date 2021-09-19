@@ -37,8 +37,6 @@
   <h2>Scholarship Tracker</h2>
 </div>
 
-
-
 <div class="accordion accordion-flush container" id="accordionFlushExample">
   {% for post in posts %}
   <div class="accordion-item row">
@@ -51,21 +49,21 @@
         aria-expanded="false"
         aria-controls="flush-collapseOne"
       >
-        <h5 class="col-lg-4"></h5>
+        <h5 class="col-lg-4">{{post.title}}</h5>
       </button>
     </h2>
     <div
-      id="flush-collapseOne"
+      id="flush-collapseOnes"
       class="accordion-collapse collapse show"
       aria-labelledby="flush-headingOne"
       data-bs-parent="#accordionFlushExample"
     >
       <div class="accordion-body row text-center">
-        <div class="col-lg-4">
+        <div class="col col-lg-4">
           <span class="bold-text">Application Stage:</span>
           <span class="pill pill-green">Completed</span>
         </div>
-        <div class="col-lg-4">
+        <div class="col col-lg-4">
           Status: <span class="pill pill-gray">Pending</span>
         </div>
       </div>

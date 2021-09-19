@@ -31,13 +31,7 @@
 
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-      <a
-        class="navbar-brand font-weight-bold px-3"
-        href="#"
-        style="max-width: 30%"
-      >
-        <img src="\blog\static\blog\logo.png" alt="RISE" class="img-fluid" />
-      </a>
+      <a class="navbar-brand font-weight-bold px-5 display-2" href="#">RISE </a>
       <button
         class="navbar-toggler"
         type="button"
@@ -52,14 +46,13 @@
       <div class="collapse navbar-collapse" id="navbarToggle">
         <ul class="col-lg-10 navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home </a>
+            <a class="nav-link" href="{% url 'blog-home' %}">Home </a>
           </li>
           <!-- Navbar Right Side -->
           <li class="nav-item">
-            <a class="nav-link" href="#">Track Scholarships</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="{% url 'blog-track' %}"
+              >Track Scholarships</a
+            >
           </li>
         </ul>
         <div class="col-lg-2 move nav-item">
